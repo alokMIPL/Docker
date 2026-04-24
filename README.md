@@ -117,7 +117,7 @@ We can run multiple containers from 1 image
 1. Docker images are versioned.
 2. Different versions are identified by tags.
 
-### How to PULL Docker Image
+### How to PULL Docker Iamge
 Command
 ```docker pull nginx:1.23```
 <img width="927" height="509" alt="image" src="https://github.com/user-attachments/assets/ee6d0fe1-f663-4052-9c3b-c7482b5b072e" />
@@ -194,6 +194,7 @@ For Port Binding we use this command
 
 <img width="1467" height="625" alt="image" src="https://github.com/user-attachments/assets/04fc2984-c573-438b-b72b-5da9f3af1cb1" />
 
+
 Now nginx work or run on localHost ```http://localhost:1200```
 
 <img width="1267" height="342" alt="image" src="https://github.com/user-attachments/assets/43434a72-df9f-4e45-bd7c-2170db87d501" />
@@ -238,7 +239,6 @@ It need a container ID like ```Docker start a0787c26320a```
 
 <img width="817" height="444" alt="image" src="https://github.com/user-attachments/assets/09c33502-7052-4dd8-a4ed-312e2019f0f1" />
 
-
 ## Registry vs Repository
 
 ### Docker Registry
@@ -275,4 +275,67 @@ Every image consists of multiple image layers
 This makes Docker so efficient, because image layers can be cached.
 
 <img width="786" height="432" alt="image" src="https://github.com/user-attachments/assets/a1308f0e-75a0-4f09-867d-3606205e9aa3" />
+
+## Building our own project Image on Docker.
+
+<img width="679" height="282" alt="image" src="https://github.com/user-attachments/assets/0bc7acff-1654-4f44-9df6-c5ba2bb84873" />
+
+
+### 1. Building Dcokerfile
+
+<img width="723" height="224" alt="image" src="https://github.com/user-attachments/assets/ec81e9d7-9664-4157-93b0-2d49ce4ec538" />
+
+We are building the Docker image for node project so we need to provide the node also in container.
+
+So, we use ```FROM node:19-alpine``` in Dockerfile.
+
+Means, install node in local system and for container we use ```FROM node <version>```
+
+```
+FROM : Building the images from the specified image
+
+RUN : Will execute any command in a shell inside the containers environment.
+
+This RUN container also install the node in docker container.
+
+COPY : Copies files or directories from <src> and adds them to the filesystem
+of the container at the path <dest>
+
+While "RUN" is executed in the container, "COPY" is exectued on the host.
+
+WORKDIR : Sets the working directory for all following commands.
+Like changing into a directory: "cd...."
+
+CMD : The instruction that is to be executed when a Docker container starts.
+
+There can only "CMD" instruction in a Dockerfile.
+CMD ["node", "server.js"]
+```
+
+<img width="868" height="500" alt="image" src="https://github.com/user-attachments/assets/e80bedcf-6453-43cd-9645-8d1ce9eb6119" />
+
+
+<img width="737" height="223" alt="image" src="https://github.com/user-attachments/assets/698b777d-366c-46d4-8e42-1f2f3fcaeac5" />
+
+> In 1st COPY, we only copy the package.json file. But in 2nd COPY, we copy the whole src file.
+
+> We use /app/ because it that app/ filder not created then create automatically.
+
+<img width="594" height="214" alt="image" src="https://github.com/user-attachments/assets/36a917cd-c957-4697-804c-d5e5b058d7da" />
+
+<img width="718" height="192" alt="image" src="https://github.com/user-attachments/assets/d294cef3-31a7-40eb-af18-d92d84309d7c" />
+
+
+#### **FINAL DOCKERFILE CODE**
+```
+FROM node:25-alpine3.22
+COPY package.json /app/
+COPY src /app/
+WORKDIR /app
+RUN npm install
+CMD ["node", "server.js"]
+```
+<img width="592" height="286" alt="image" src="https://github.com/user-attachments/assets/224a97bd-cdaf-4e49-adf5-a2e0fc507512" />
+
+### Now building Docker Image.
 
