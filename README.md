@@ -206,3 +206,15 @@ Now nginx work or run on localHost ```http://localhost:1200```
 > ```Docker ps``` show only running containers but ```Docker ps -a or -all``` show all containers.
 
 <img width="1004" height="449" alt="image" src="https://github.com/user-attachments/assets/27dc9172-eac0-4fa9-9bbe-f9c7a8ad4518" />
+
+This command also show the running container and exited container.
+
+### Docker stop
+<img width="1018" height="522" alt="image" src="https://github.com/user-attachments/assets/d70f9a62-a23b-43ca-978e-c2f53bbf4a22" />
+
+it need a container ID to like ```Docker stop a0787c26320a```
+
+### Docker start
+<img width="547" height="109" alt="image" src="https://github.com/user-attachments/assets/86534154-74f5-4dd8-a3cd-e8e1f617579a" />
+
+It need a container ID to like ```Docker start a0787c26320a```
