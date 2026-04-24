@@ -196,6 +196,6 @@ Now nginx work or run on localHost ```http://localhost:1200```
 
 <img width="1267" height="342" alt="image" src="https://github.com/user-attachments/assets/43434a72-df9f-4e45-bd7c-2170db87d501" />
 
-**For Best practice in PORT BINDING use the same port**
+**For Best practice in PORT BINDING use the same port like MySQL bydefault port is 3306 then on local we need to use PORT 3306**
 <img width="481" height="505" alt="image" src="https://github.com/user-attachments/assets/550253c5-8491-4952-99ee-38761cd4edef" />
 
