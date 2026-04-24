@@ -226,5 +226,25 @@ It need a container ID like ```Docker start a0787c26320a```
 <img width="1010" height="527" alt="image" src="https://github.com/user-attachments/assets/d6a46da5-58f1-40ed-b807-23ac58df7376" />
 
 ### Docker logs
-``` Docker logs web-app ``` give all information about that container. 
+``` Docker logs web-app ``` give all information about that container.
+
 <img width="897" height="513" alt="image" src="https://github.com/user-attachments/assets/b7c5556c-19d3-46dc-8c8b-84e728cad091" />
+
+## Public and Private Docker Registries
+
+<img width="819" height="388" alt="image" src="https://github.com/user-attachments/assets/b66eaef3-12c8-404a-a0b6-dda2415c4d0c" />
+
+<img width="817" height="444" alt="image" src="https://github.com/user-attachments/assets/09c33502-7052-4dd8-a4ed-312e2019f0f1" />
+
+
+## Registry vs Repository
+
+### Docker Registry
+A service providing storage.
+Can be hosted by a third party, like AWS, or by yourself.
+Collection of repositories.
+
+### Docker Repository
+Collection of related images with same name but different versions.
+
+<img width="871" height="454" alt="image" src="https://github.com/user-attachments/assets/70ad7a23-8d16-4f18-ab2e-73763f82c389" />
