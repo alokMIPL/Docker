@@ -117,7 +117,7 @@ We can run multiple containers from 1 image
 1. Docker images are versioned.
 2. Different versions are identified by tags.
 
-### How to PULL Docker Iamge
+### How to PULL Docker Image
 Command
 ```docker pull nginx:1.23```
 <img width="927" height="509" alt="image" src="https://github.com/user-attachments/assets/ee6d0fe1-f663-4052-9c3b-c7482b5b072e" />
@@ -212,9 +212,19 @@ This command also show the running container and exited container.
 ### Docker stop
 <img width="1018" height="522" alt="image" src="https://github.com/user-attachments/assets/d70f9a62-a23b-43ca-978e-c2f53bbf4a22" />
 
-it need a container ID to like ```Docker stop a0787c26320a```
+it need a container ID like ```Docker stop a0787c26320a```
 
 ### Docker start
 <img width="547" height="109" alt="image" src="https://github.com/user-attachments/assets/86534154-74f5-4dd8-a3cd-e8e1f617579a" />
 
-It need a container ID to like ```Docker start a0787c26320a```
+It need a container ID like ```Docker start a0787c26320a```
+> We can start multiple container at same time.
+
+### Giving name to container instead of default name
+``` docker run --name web-app -d -p  9000:80 nginx:1.23```
+
+<img width="1010" height="527" alt="image" src="https://github.com/user-attachments/assets/d6a46da5-58f1-40ed-b807-23ac58df7376" />
+
+### Docker logs
+``` Docker logs web-app ``` give all information about that container. 
+<img width="897" height="513" alt="image" src="https://github.com/user-attachments/assets/b7c5556c-19d3-46dc-8c8b-84e728cad091" />
