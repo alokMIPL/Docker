@@ -192,6 +192,8 @@ For Port Binding we use this command
 
 <img width="1079" height="331" alt="image" src="https://github.com/user-attachments/assets/b5364969-3026-471f-b43e-58e770dd9bc5" />
 
+<img width="1467" height="625" alt="image" src="https://github.com/user-attachments/assets/04fc2984-c573-438b-b72b-5da9f3af1cb1" />
+
 Now nginx work or run on localHost ```http://localhost:1200```
 
 <img width="1267" height="342" alt="image" src="https://github.com/user-attachments/assets/43434a72-df9f-4e45-bd7c-2170db87d501" />
@@ -248,3 +250,29 @@ Collection of repositories.
 Collection of related images with same name but different versions.
 
 <img width="871" height="454" alt="image" src="https://github.com/user-attachments/assets/70ad7a23-8d16-4f18-ab2e-73763f82c389" />
+
+## Dockerfile -
+### Create own Images
+
+<img width="686" height="348" alt="image" src="https://github.com/user-attachments/assets/23c5397c-2994-475b-a98f-48c78676b40f" />
+
+Dockerfile is a text documents that contains commands to assemble an image.
+Docker can then build an image by reading those instructions.
+
+### Structure of Dockerfile
+Docker file start from a parent image or **base image**
+It's a Docker image that your image is based on.
+**You choose the base image, depending on which tools you need to have available**
+
+<img width="532" height="439" alt="image" src="https://github.com/user-attachments/assets/71e866dd-143f-4a55-9783-f782df7624e4" />
+
+```FROM```
+> Dockerfile must begin with a FROM instruction
+> Build this image from the specified image
+
+### Multi-Layer Approach
+Every image consists of multiple image layers
+This makes Docker so efficient, because image layers can be cached.
+
+<img width="786" height="432" alt="image" src="https://github.com/user-attachments/assets/a1308f0e-75a0-4f09-867d-3606205e9aa3" />
+
