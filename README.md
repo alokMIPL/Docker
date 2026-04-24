@@ -278,6 +278,11 @@ This makes Docker so efficient, because image layers can be cached.
 
 ## Building our own project Image on Docker.
 
+**Docker has three parts**
+**1. Dockerfile**
+**2. Image**
+**3. Container**
+
 <img width="679" height="282" alt="image" src="https://github.com/user-attachments/assets/0bc7acff-1654-4f44-9df6-c5ba2bb84873" />
 
 
@@ -337,5 +342,70 @@ CMD ["node", "server.js"]
 ```
 <img width="592" height="286" alt="image" src="https://github.com/user-attachments/assets/224a97bd-cdaf-4e49-adf5-a2e0fc507512" />
 
-### Now building Docker Image.
+### 2. Now building Docker Image.
+
+```  docker build -t node-app:1.0 . ```
+
+<img width="849" height="664" alt="image" src="https://github.com/user-attachments/assets/84166f8b-0ecb-4e3d-aebf-a90202359268" />
+
+```
+PS C:\Users\ALOK\Desktop\DockerRun> docker build -t node-app:1.0 .
+[+] Building 8.3s (11/11) FINISHED                                                                                                                                        docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                                      0.0s
+ => => transferring dockerfile: 171B                                                                                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/node:25-alpine3.22                                                                                                                     1.8s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                                                               0.0s
+ => [internal] load .dockerignore                                                                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                                                                           0.0s
+ => CACHED [1/5] FROM docker.io/library/node:25-alpine3.22@sha256:d4f742bdaee57b81d8b1a1c78e210e5c3c2b3892b335a30575956819028c804e                                                        0.1s
+ => => resolve docker.io/library/node:25-alpine3.22@sha256:d4f742bdaee57b81d8b1a1c78e210e5c3c2b3892b335a30575956819028c804e                                                               0.0s
+ => [internal] load build context                                                                                                                                                         0.1s
+ => => transferring context: 876B                                                                                                                                                         0.1s
+ => [2/5] COPY package.json /app/                                                                                                                                                         0.1s
+ => [3/5] COPY src /app/                                                                                                                                                                  0.1s
+ => [4/5] WORKDIR /app                                                                                                                                                                    0.1s
+ => [5/5] RUN npm install                                                                                                                                                                 3.3s
+ => exporting to image                                                                                                                                                                    1.5s
+ => => exporting layers                                                                                                                                                                   0.8s
+ => => exporting manifest sha256:5cf79202bd9248527a62a17c6cf24beabe7f6fbf96b114a2667233d15f722d42                                                                                         0.0s
+ => => exporting config sha256:8d5d67a214223e39eed5615fc2446d4efc471eb91c53a5b1619e97dc115ae777                                                                                           0.1s
+ => => exporting attestation manifest sha256:8e8141032e444e3b0fb1a1eada597e89b440354ed35386a2dd8315d326890360                                                                             0.1s
+ => => exporting manifest list sha256:fba26fdfed6f61a783489741bdf9528f8464e235891b9a9f89de1de7b749f843                                                                                    0.1s
+ => => naming to docker.io/library/node-app:1.0                                                                                                                                           0.0s
+ => => unpacking to docker.io/library/node-app:1.0                                                                                                                                        0.4s
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/pkg5wjnc3j8wob6n58z68z0yc
+```
+
+**The New Docker Image is build and the image also shows in DockerDesktop **
+
+<img width="1656" height="466" alt="image" src="https://github.com/user-attachments/assets/d536be78-2a13-445c-a16a-ab4c26d2ea3c" />
+
+In Command lIne it also show the new Created image when we type ```docker images```
+<img width="596" height="184" alt="image" src="https://github.com/user-attachments/assets/4413ad8b-8500-426e-89d4-4b1617c9842a" />
+
+
+**A Docker image consists of layers**
+
+**Each instrunctions in the Dockerfile creates one layer**
+
+**These layers are stacked and each one is a delta of the changes from the previous layer**
+
+### 3. Now running the Docker Container.
+
+``` docker run -d -p 3000:3000 node-app:1.0 ```
+1. Running this is terminal
+<img width="666" height="236" alt="image" src="https://github.com/user-attachments/assets/990e11ab-5d2f-4baf-985c-aaf3b2aa2a6f" />
+
+2. Show container in Docker-Desktop
+<img width="1658" height="344" alt="image" src="https://github.com/user-attachments/assets/98433d06-4fd8-4292-b34e-c8ac03071fcb" />
+
+3. When we check ```docker ps``` so it show the running container in terminal also.
+<img width="971" height="100" alt="image" src="https://github.com/user-attachments/assets/5eda3b82-7044-44ea-a6e5-68f8627d5221" />
+
+4. Run the project on localhost:3000
+<img width="750" height="247" alt="image" src="https://github.com/user-attachments/assets/6065428a-3031-4f80-8f96-db5af263d4f9" />
+
+5. When we do ```docker logs 7e9a371d078a``` then also show the running port in container.
+<img width="956" height="283" alt="image" src="https://github.com/user-attachments/assets/5c859205-1514-4c1d-8dad-6c4d80b25743" />
+
 
