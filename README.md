@@ -170,6 +170,7 @@ nginx:1.22-alpine                           8745c93f1a1c         63MB         16
 postgres:16-alpine                          20edbde7749f        395MB          111MB    U
 
 C:\Users\ALOK>
+
 ```
 ## Container Port vs Host Port
 <img width="853" height="496" alt="image" src="https://github.com/user-attachments/assets/4348c4e5-5ee4-4792-9f8b-3249186c89e2" />
@@ -375,7 +376,7 @@ PS C:\Users\ALOK\Desktop\DockerRun> docker build -t node-app:1.0 .
  => => unpacking to docker.io/library/node-app:1.0                                                                                                                                        0.4s
 View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/pkg5wjnc3j8wob6n58z68z0yc
 ```
-
+ 
 **The New Docker Image is build and the image also shows in DockerDesktop **
 
 <img width="1656" height="466" alt="image" src="https://github.com/user-attachments/assets/d536be78-2a13-445c-a16a-ab4c26d2ea3c" />
@@ -384,7 +385,7 @@ In Command lIne it also show the new Created image when we type ```docker images
 <img width="596" height="184" alt="image" src="https://github.com/user-attachments/assets/4413ad8b-8500-426e-89d4-4b1617c9842a" />
 
 
-**A Docker image consists of layers**
+**A Docker image consists of layers** 
 
 **Each instrunctions in the Dockerfile creates one layer**
 
